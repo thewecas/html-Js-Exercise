@@ -4,7 +4,7 @@
 
 Design the same webpage in the given link below using HTML,CSS(Do not use Bootstrap).It Should be responsive in all the screen sizes.  
 [Reference Image](1/images/webovio.jpg)    
-[Preview]()  
+[Preview](https://thewecas.github.io/html-Js-Exercise/1/)  
 [code](./1/)
 
 ## 2. Exercise - Responsive Web Page using Bootstrap  
@@ -317,7 +317,7 @@ You may assume the following rules:
 - A player who succeeds in placing 3 of their marks in a horizontal, vertical, or diagonal row wins the game.  
   
 
-[Preview]()  
+[Preview](https://thewecas.github.io/html-Js-Exercise/14/)  
 [code](/14)
 
 ## 15. Exercise - TO DO List 
@@ -325,7 +325,7 @@ You may assume the following rules:
 
 create a small to do list using javascript and higher order functions & most optimized way   
 
-[Preview]()  
+[Preview](https://thewecas.github.io/html-Js-Exercise/15/)  
 [code](/15)
 
 

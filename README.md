@@ -173,9 +173,7 @@ console.log(makePizza(toppings)); // Output : A tasty pizza with Cheese and Ham 
 Write a short function to capitalize every element of the array.  
 You must use the Array#map function and the String#uppercase function.
 ```js
-const capitalizeArray = (arr) => {
-  return arr.map((ele) => ele.substring(0, 1).toUpperCase() + ele.substring(1));
-};
+const capitalizeArray = (arr) => arr.map((ele) => ele.substring(0, 1).toUpperCase() + ele.substring(1));
 
 const arr = ["hello", "there", "how are you?"];
 
@@ -196,20 +194,19 @@ For example the list `["Hello", "World", "in", "a", "frame"]` gets printed as:
 ```
 ```js
 const printStrFrame = (arr) => {
-  //find length of longest element from the array
-  let len = 0;
-  len = arr.reduce((ele, len) => {
+  //find length of largest element from the array
+  const maxLen = arr.reduce((len, ele) => {
     return ele.length > len ? ele.length : len;
-  }, len).length;
+  }, 0);
 
   //print the frame
-  console.log("*".repeat(len + 4));
+  console.log("*".repeat(maxLen + 4));
 
   arr.forEach((ele) => {
-    console.log(`* ${ele}${" ".repeat(len - ele.length)} *`);
+    console.log(`* ${ele}${" ".repeat(maxLen - ele.length)} *`);
   });
 
-  console.log("*".repeat(len + 4));
+  console.log("*".repeat(maxLen + 4));
 };
 
 const arr = ["Hello", "World", "in", "a", "frame"];

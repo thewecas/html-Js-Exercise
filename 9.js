@@ -1,18 +1,17 @@
 const printStrFrame = (arr) => {
   //find length of largest element from the array
-  let len = 0;
-  len = arr.reduce((ele, len) => {
+  const maxLen = arr.reduce((len, ele) => {
     return ele.length > len ? ele.length : len;
-  }, len).length;
+  }, 0);
 
   //print the frame
-  console.log("*".repeat(len + 4));
+  console.log("*".repeat(maxLen + 4));
 
   arr.forEach((ele) => {
-    console.log(`* ${ele}${" ".repeat(len - ele.length)} *`);
+    console.log(`* ${ele}${" ".repeat(maxLen - ele.length)} *`);
   });
 
-  console.log("*".repeat(len + 4));
+  console.log("*".repeat(maxLen + 4));
 };
 
 const arr = ["Hello", "World", "in", "a", "frame"];

@@ -1,0 +1,164 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  line-height: 1.5;
+}
+
+a {
+  text-underline-offset: 4px;
+  font-weight: 600;
+}
+
+:root {
+  font-size: min(4vw, 16px);
+}
+
+body {
+  width: 100%;
+  overflow-x: hidden;
+}
+body::-webkit-scrollbar {
+  display: none;
+}
+
+.main-section {
+  background-image: url(./images/img1.png);
+  background-repeat: no-repeat;
+  background-position: 60% 50%;
+  background-size: cover;
+}
+.main-section header {
+  width: min(100%, 1080px);
+  margin-inline: auto;
+  padding-inline: 1rem;
+  display: flex;
+  justify-content: space-between;
+  padding-block: 1.5rem;
+}
+.main-section header .logo {
+  width: 12rem;
+}
+.main-section header .menu {
+  height: 2rem;
+  aspect-ratio: 1/1;
+  background-color: #ffffff;
+  border-radius: 50%;
+  position: relative;
+}
+.main-section header .menu img {
+  width: 50%;
+  position: absolute;
+  margin: auto;
+  inset: 0;
+}
+.main-section .main {
+  width: min(100%, 1080px);
+  margin-inline: auto;
+  padding-inline: 1rem;
+  padding-block: 5rem 10rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 2rem;
+}
+.main-section .main p {
+  max-width: 50ch;
+  color: #d4d6d3;
+}
+.main-section .main h1 {
+  max-width: 16ch;
+  color: #ffffff;
+  font-size: min(8vw, 3rem);
+}
+.main-section .main a {
+  color: #cead1d;
+}
+
+.brands {
+  width: min(100%, 1080px);
+  margin-inline: auto;
+  padding-inline: 1rem;
+  margin-top: -4rem;
+  padding: 0;
+}
+.brands .container {
+  width: 100vw;
+  background-color: #ffffff;
+  box-shadow: 10px 20px 30px rgba(128, 128, 128, 0.3);
+}
+.brands .container .img-container {
+  width: min(100%, 1080px);
+  margin-inline: auto;
+  padding-inline: 1rem;
+  padding: 2rem 1rem;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: space-evenly;
+}
+.brands .container .img-container img {
+  width: min(33%, 8rem);
+  mix-blend-mode: multiply;
+  filter: saturate(0);
+  opacity: 0.7;
+}
+
+.what-we-do {
+  width: min(100%, 1080px);
+  margin-inline: auto;
+  padding-inline: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.what-we-do .info-container {
+  display: flex;
+  flex-direction: column;
+  padding-block: 4rem 2rem;
+  width: min(100%, 50ch);
+  gap: 2rem;
+}
+.what-we-do .info-container p {
+  color: #555a49;
+}
+.what-we-do .info-container h1 {
+  color: #36392b;
+}
+.what-we-do .info-container a {
+  width: 100%;
+  color: #d4d6d3;
+}
+.what-we-do .testimonial {
+  padding: 3rem 2rem;
+  width: min(80%, 33ch);
+  box-shadow: 0px 0px 30px rgba(128, 128, 128, 0.2);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: 2rem;
+}
+.what-we-do .testimonial .text-content {
+  font-style: italic;
+  color: #555a49;
+}
+.what-we-do .testimonial .author {
+  display: flex;
+  gap: 1rem;
+}
+.what-we-do .testimonial .author img {
+  height: 3rem;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  box-shadow: 5px 5px 20px rgba(128, 128, 128, 0.3);
+}
+.what-we-do .testimonial .author div .author-name {
+  font-weight: 700;
+  color: #36392b;
+}
+.what-we-do .testimonial .author div .author-desig {
+  font-size: 0.8rem;
+}/*# sourceMappingURL=style.css.map */

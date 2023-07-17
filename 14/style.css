@@ -1,0 +1,116 @@
+@import url("https://fonts.googleapis.com/css2?family=Sniglet&display=swap");
+
+:root {
+  font-size: min(5vw, 20px);
+  --font: "Sniglet", cursive;
+  --ease: all 0.2s ease-in-out;
+}
+
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #121212;
+    --text: #ccc;
+    --primary: #26252b;
+    --accent: #8583e6;
+  }
+
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --bg: #ffffff;
+    --text: #121212;
+    --primary: #f0f0f7;
+    --accent: #7171d7;
+  }
+
+}
+
+* {
+  border: 0;
+  margin: 0;
+  box-sizing: border-box;
+  text-align: center;
+  font-family: var(--font);
+}
+
+body {
+  height: 100svh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg);
+  color: var(--text);
+  gap: 2rem;
+  padding-top: 2rem;
+  position: relative;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, min(100px, 25vw));
+  grid-template-rows: repeat(3, min(100px, 25vw));
+  gap: 0.5rem;
+  margin-top: 2rem;
+}
+
+.grid button {
+  font-size: 2rem;
+  font-weight: bold;
+  border-radius: 0.5rem;
+  background-color: var(--primary);
+  color: var(--accent);
+  transition: var(--ease);
+}
+
+.grid button.highlight {
+  background-color: rgba(var(--accent), 0.8);
+  color: var(--primary);
+}
+
+
+button#restart {
+  padding: 0.75rem 1rem;
+  border-radius: 0.25rem;
+  font-size: 1rem;
+  transition: var(--ease);
+  background-color: var(--primary);
+  color: var(--text);
+
+}
+
+.result {
+  border-radius: 0.5rem;
+  z-index: 2;
+  display: grid;
+  font-size: 1.2rem;
+  place-content: center;
+}
+
+.backdrop {
+  display: none;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(15, 31, 74, 0.2);
+  position: fixed;
+  top: 0;
+  -webkit-backdrop-filter: blur(3px);
+  backdrop-filter: blur(3px);
+  z-index: 1;
+}
+
+@media (hover: hover) {
+  .grid button:hover {
+    cursor: pointer;
+    background-color: rgba(113, 113, 215, 0.8);
+    color: var(--primary);
+  }
+
+  button#restart:hover {
+    cursor: pointer;
+    background-color: rgba(113, 113, 215, 0.8);
+    color: var(--primary);
+  }
+}

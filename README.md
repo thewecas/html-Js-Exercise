@@ -239,12 +239,13 @@ console.log(pigStr);  // Output : heTay uickqay rownbay oxfay
 Given an array with numbers, write a program that efficiently answers queries of the form: “Which is the nearest larger value for the number at position i?”, where distance is the difference in array indices.  
  For example in the array `[1,4,3,2,5,7]`, the nearest larger value for 4 is 5. 
 ```js
-const nearestLargerValue = (arr, index) => {
+const nearestLargerValue = (arr, val) => {
   let dist = Number.MAX_VALUE;
   let largerVal = null;
+  let index = arr.indexOf(val);
 
   arr.forEach((ele, i) => {
-    if (ele > arr[index] && Math.abs(i - index) < dist) {
+    if (ele > val && Math.abs(i - index) < dist) {
       dist = Math.abs(i - index);
       largerVal = ele;
     }
@@ -255,8 +256,9 @@ const nearestLargerValue = (arr, index) => {
 
 const arr = [1, 4, 3, 2, 5, 7];
 
-console.log(nearestLargerValue(arr, 2)); // Output : 4
-console.log(nearestLargerValue(arr, 3)); // Output : 3
+console.log(nearestLargerValue(arr, 2)); // Output : 3
+console.log(nearestLargerValue(arr, 3)); // Output : 4
+console.log(nearestLargerValue(arr, 4)); // Output : 5
 ```
 
 ## 12. Exercise

@@ -7,7 +7,7 @@ Design the same webpage in the given link below using HTML,CSS(Do not use Bootst
 [code](./1/)
 
 ## 2. Exercise - Responsive Web Page using Bootstrap  
-> ***Yet to start***	    
+> ***In progress***	    
 
 Design the same webpage in the given link below using HTML,CSS.It Should be responsive for all devices.  
 [Reference Image](2/images/ketamine.png)  

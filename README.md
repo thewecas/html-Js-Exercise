@@ -1,6 +1,5 @@
   
 ## 1. Exercise - Responsive Webpage using HTML,CSS 
-> ***In Progress***	  
 
 Design the same webpage in the given link below using HTML,CSS(Do not use Bootstrap).It Should be responsive in all the screen sizes.  
 [Reference Image](1/images/webovio.jpg)    

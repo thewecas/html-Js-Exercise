@@ -1,0 +1,140 @@
+:root {
+  font-size: min(4vw, 16px);
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.primary-bg {
+  background-color: #449c99 !important;
+}
+
+.secondary-bg {
+  background-color: rgb(195, 195, 195);
+}
+
+.accent-bg {
+  background-color: #00317a;
+}
+
+.transparent-bg {
+  background-color: rgba(0, 49, 122, 0.6) !important;
+}
+
+txt-opacity-50 {
+  opacity: 0.5;
+}
+
+primary-border {
+  border-color: #449c99 !important;
+}
+
+.primary-txt {
+  color: #449c99 !important;
+}
+
+.secondary-txt {
+  color: rgb(107, 107, 107);
+}
+
+.fw-500 {
+  font-weight: 500 !important;
+}
+
+.accent-txt {
+  color: #00317a !important;
+}
+
+.height-5 {
+  height: 5px !important;
+}
+
+@media screen and (width < 768px) {
+  .max-height-40 {
+    max-height: 40vh;
+  }
+}
+
+.img-fit {
+  -o-object-fit: cover !important;
+     object-fit: cover !important;
+  height: 100% !important;
+  width: 100% !important;
+  padding: 0 !important;
+}
+
+.floating-box {
+  width: min(100%, 80ch) !important;
+}
+
+@media screen and (width < 992px) {
+  .floating-form {
+    position: relative !important;
+    inset: 0 !important;
+    transform: none !important;
+    width: 100% !important;
+  }
+}
+
+.icons {
+  width: 2rem !important;
+  display: block;
+  height: 2rem !important;
+}
+
+.max-width {
+  max-width: 15rem;
+}
+
+.landing-section {
+  background-image: url(./images/img3.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding-bottom: 5rem;
+  z-index: -2;
+}
+.landing-section .floating-section {
+  width: 90% !important;
+  margin-block: 10rem;
+  padding-block: 5rem;
+  margin-inline: auto;
+}
+@media screen and (width < 576px) {
+  .landing-section .floating-section {
+    margin-block: 5rem 3rem;
+  }
+}
+
+.img-floating {
+  z-index: -1 !important;
+  right: -10%;
+  top: -8rem;
+}
+@media screen and (width < 576px) {
+  .img-floating {
+    display: none;
+  }
+}
+
+.contact-section {
+  background-image: url(./images/img4.jpg);
+  background-repeat: no-repeat;
+}
+
+.max-height-4 {
+  height: 4rem;
+}
+.max-height-4 img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: top;
+     object-position: top;
+}/*# sourceMappingURL=style.css.map */

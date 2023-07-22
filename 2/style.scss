@@ -1,0 +1,138 @@
+$width: min(100%, 1024px);
+
+$accent: #00317a;
+$bg: #449c99;
+
+:root {
+  font-size: min(4vw, 16px);
+}
+::-webkit-scrollbar {
+  display: none;
+}
+
+// reset
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+// utility classes
+
+.primary-bg {
+  background-color: $bg !important;
+}
+
+.secondary-bg {
+  background-color: rgb(195, 195, 195);
+}
+
+.accent-bg {
+  background-color: $accent;
+}
+
+.transparent-bg {
+  background-color: rgba($accent, 0.6) !important;
+}
+
+txt-opacity-50 {
+  opacity: 0.5;
+}
+primary-border {
+  border-color: $bg !important;
+}
+.primary-txt {
+  color: $bg !important;
+}
+.secondary-txt {
+  color: rgb(107, 107, 107);
+}
+
+.fw-500 {
+  font-weight: 500 !important;
+}
+
+.accent-txt {
+  color: $accent !important;
+}
+
+.height-5 {
+  height: 5px !important;
+}
+.max-height-40 {
+  @media screen and (width<768px) {
+    max-height: 40vh;
+  }
+}
+.img-fit {
+  object-fit: cover !important;
+  height: 100% !important;
+  width: 100% !important;
+  padding: 0 !important;
+}
+
+.floating-box {
+  width: min(100%, 80ch) !important;
+}
+
+.floating-form {
+  @media screen and (width<992px) {
+    position: relative !important;
+    inset: 0 !important;
+    transform: none !important;
+    width: 100% !important;
+  }
+}
+
+.icons {
+  width: 2rem !important;
+  display: block;
+  height: 2rem !important;
+}
+.max-width {
+  max-width: 15rem;
+}
+
+// custom styling
+
+.landing-section {
+  background-image: url(./images/img3.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding-bottom: 5rem;
+  z-index: -2;
+
+  .floating-section {
+    width: 90% !important;
+    margin-block: 10rem;
+    padding-block: 5rem;
+    margin-inline: auto;
+    @media screen and (width<576px) {
+      margin-block: 5rem 3rem;
+    }
+  }
+}
+
+.img-floating {
+  z-index: -1 !important;
+  right: -10%;
+  top: -8rem;
+  @media screen and (width<576px) {
+    display: none;
+  }
+  // top: 0;
+}
+
+.contact-section {
+  background-image: url(./images/img4.jpg);
+  background-repeat: no-repeat;
+}
+
+.max-height-4 {
+  height: 4rem;
+  img {
+    object-fit: cover;
+    object-position: top;
+  }
+}

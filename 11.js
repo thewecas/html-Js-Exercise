@@ -1,7 +1,7 @@
 const nearestLargerValue = (arr, val) => {
   let dist = Number.MAX_VALUE;
   let largerVal = null;
-  let index = arr.indexOf(val);
+  const index = arr.indexOf(val);
 
   arr.forEach((ele, i) => {
     if (ele > val && Math.abs(i - index) < dist) {

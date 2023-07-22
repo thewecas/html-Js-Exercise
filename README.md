@@ -6,12 +6,12 @@ Design the same webpage in the given link below using HTML,CSS(Do not use Bootst
 [Preview](https://thewecas.github.io/html-Js-Exercise/1/)  
 [code](./1/)
 
-## 2. Exercise - Responsive Web Page using Bootstrap  
-> ***In progress***	    
+## 2. Exercise - Responsive Web Page using Bootstrap      
 
 Design the same webpage in the given link below using HTML,CSS.It Should be responsive for all devices.  
 [Reference Image](2/images/ketamine.png)  
-
+[Preview](https://thewecas.github.io/html-Js-Exercise/2/)  
+[code](./2/)
 
 ## 3. Exercise - String Concatenation  
 Create a variable called greeting. Store the value `'hello'` in it.  
@@ -241,7 +241,7 @@ Given an array with numbers, write a program that efficiently answers queries of
 const nearestLargerValue = (arr, val) => {
   let dist = Number.MAX_VALUE;
   let largerVal = null;
-  let index = arr.indexOf(val);
+  const index = arr.indexOf(val);
 
   arr.forEach((ele, i) => {
     if (ele > val && Math.abs(i - index) < dist) {

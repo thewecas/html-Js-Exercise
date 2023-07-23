@@ -11,7 +11,7 @@ $width: min(100%, 500px);
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  line-height: 1.15;
+  line-height: 1.5;
 }
 
 body {
@@ -56,7 +56,7 @@ header {
       }
       #input-title {
         height: 3rem;
-        border-radius: 1.5rem;
+        border-radius: 1rem;
         transition: all 0.1s linear;
         font-family: $text;
         font-weight: 500;
@@ -69,7 +69,7 @@ header {
         height: 4rem;
         transition: all 0.3s ease-in-out;
         border-top: none;
-        border-radius: 0 0 1.5rem 1.5rem;
+        border-radius: 0 0 1rem 1rem;
         resize: none;
         overflow-y: hidden;
         font-family: $text;
@@ -78,8 +78,8 @@ header {
       button[type="submit"] {
         position: absolute;
         right: 0;
-        top: 0.1rem;
-        font-size: 2.2rem;
+        top: 0.05rem;
+        font-size: 2rem;
         background-color: transparent;
         border: none;
         border-radius: 30px;
@@ -88,13 +88,13 @@ header {
         @media (hover: hover) {
           &:hover {
             cursor: pointer;
-            color: gray;
+            color: rgb(54, 53, 53);
           }
         }
       }
       &:focus-within {
         #input-title {
-          border-radius: 1.5rem 1.5rem 0 0;
+          border-radius: 1rem 1rem 0 0;
         }
         #input-description {
           display: block;
@@ -120,7 +120,6 @@ header {
   margin-top: 9rem;
   .task-container {
     position: relative;
-    padding-inline: 0.75rem;
     h2 {
       font-family: $text;
       font-weight: 500;
@@ -128,54 +127,200 @@ header {
       margin-block: 1.5rem 1rem;
     }
 
+    .empty-pending-task {
+      min-height: 150px;
+      font-size: 1.2rem;
+      display: grid;
+      place-content: center;
+      color: gray;
+      font-family: $text;
+    }
+
+    .heading {
+      .fa-angle-right {
+        rotate: 0deg;
+      }
+    }
+    .completed {
+      display: none;
+    }
+
+    &.visible {
+      .heading {
+        .fa-angle-right {
+          rotate: 90deg;
+        }
+      }
+      .completed {
+        display: block;
+      }
+    }
     .task {
       margin-block: 0.75rem;
-      padding-bottom: 0.25rem;
-      // border-bottom: 1px solid gray;
       display: grid;
-      grid-template-areas:
-        "check title"
-        "check  desc"
-        "checks  desc";
-      grid-template-columns: 1.8rem 12fr;
-      grid-template-rows: 1fr auto;
+      border-radius: 1rem;
+      border: 1px solid rgba(128, 128, 128, 0.548);
+      display: grid;
+      grid-template-areas: "checkbox text-content btns";
+      gap: 0.5rem;
+      grid-template-columns: auto 12fr 2.5rem;
+      &.completed-task {
+        background-color: rgba(rgb(191, 193, 198), 0.3);
+        color: rgba(gray, 0.9);
+      }
 
+      @media screen and (hover: hover) {
+        &:hover {
+          background-color: rgba(rgb(191, 193, 198), 0.2);
+          .action-btns {
+            .fa-xmark {
+              display: block;
+              cursor: pointer;
+            }
+          }
+        }
+      }
+
+      &:hover {
+        .title {
+          border-bottom: 1px solid gray;
+        }
+      }
       input[type="checkbox"] {
-        grid-area: check;
-        width: 1.2rem;
-        height: 1.2rem;
-        margin-top: 5%;
-        accent-color: rgb(88, 88, 88);
-      }
-      .title {
-        font-family: $text;
-        font-size: 1rem;
-        font-weight: 500;
-        opacity: 0.9;
-        grid-area: title;
-      }
-      .desc {
-        font-family: $text;
-        font-size: 0.87rem;
-        margin-top: 0.1rem;
-        line-height: 1.4;
-        grid-area: desc;
-        display: -webkit-box;
-        -webkit-line-clamp: 2;
-        -webkit-box-orient: vertical;
-        text-overflow: ellipsis;
-        overflow: hidden;
-        white-space: unset;
-      }
+        margin-block: 0.75rem;
+        margin-left: 0.75rem;
 
-      .fa-circle {
-        position: absolute;
-        left: 0;
+        grid-area: checkbox;
+        width: 1.5rem;
+        height: 1.5rem;
+        border-radius: 50%;
+        vertical-align: middle;
+        background-color: #fff;
+        appearance: none;
+        -webkit-appearance: none;
+        outline: none;
+        cursor: pointer;
+        margin-right: 0.2rem;
+        border: 1px solid rgba(128, 128, 128, 0.548);
+        @media screen and (hover: hover) {
+          &:hover {
+            background-color: rgba(123, 129, 138, 0.4);
+            background-color: rgb(255, 255, 255);
+            border: 1px solid rgba(128, 128, 128, 0.548);
+            &::before {
+              content: "\f00c";
+              font-family: FontAwesome;
+              font-size: 1rem;
+              color: rgb(6, 6, 6);
+              text-align: center;
+              vertical-align: center;
+              padding-left: 0.25rem;
+            }
+          }
+        }
+
+        &:checked {
+          background-color: rgba(123, 129, 138, 0.4);
+          background-color: rgb(255, 255, 255);
+          border: 1px solid rgba(128, 128, 128, 0.548);
+          &::before {
+            content: "\f00c";
+            font-family: FontAwesome;
+            font-size: 1rem;
+            color: rgb(6, 6, 6);
+            text-align: center;
+            vertical-align: center;
+            padding-left: 0.25rem;
+          }
+        }
       }
-      .fa-circle-check {
-        position: absolute;
-        left: 0;
-        display: none;
+      .text-content {
+        grid-area: text-content;
+        flex-basis: 100%;
+        flex-grow: 1;
+        margin-block: 0.75rem;
+
+        .title[contenteditable="true"],
+        .desc[contenteditable="true"] {
+          transition: all 0.2s ease-in-out;
+          -webkit-line-clamp: unset;
+          border-bottom: 1px solid rgba(gray, 0.5);
+          margin-bottom: 0.8rem;
+          padding-bottom: 0.2rem;
+          user-select: all;
+          &:focus {
+            outline: transparent;
+          }
+        }
+        .title[contenteditable="true"] {
+          &:empty::before {
+            content: "Title";
+            color: rgba(gray, 0.5);
+          }
+        }
+
+        .desc[contenteditable="true"] {
+          margin-bottom: 0;
+          &:empty::before {
+            content: "Description";
+            color: rgba(gray, 0.5);
+          }
+        }
+
+        .title {
+          transition: all 0.2s ease-in-out;
+
+          font-family: $text;
+          font-size: 1rem;
+          font-weight: 500;
+          opacity: 0.9;
+          border: transparent;
+          display: -webkit-box;
+          -webkit-line-clamp: 1;
+          -webkit-box-orient: vertical;
+          text-overflow: ellipsis;
+          overflow: hidden;
+          white-space: unset;
+        }
+        .desc {
+          transition: all 0.2s ease-in-out;
+
+          font-family: $text;
+          font-size: 0.87rem;
+          border: transparent;
+          line-height: 1.4;
+          display: -webkit-box;
+          -webkit-line-clamp: 2;
+          -webkit-box-orient: vertical;
+          text-overflow: ellipsis;
+          overflow: hidden;
+          white-space: unset;
+        }
+      }
+      .action-btns {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: flex-end;
+        gap: 0.5rem;
+        margin-right: 0.5rem;
+        margin-block: 0.5rem;
+        grid-area: btns;
+        .fa-xmark,
+        .fa-floppy-disk {
+          border-radius: 50%;
+          padding: 0.5rem 0.2rem;
+          width: 2rem;
+          height: 2rem;
+          text-align: center;
+          background-color: #ffffff;
+          // color: rgb(255, 255, 255);
+          background-color: rgb(225, 225, 225, 0.5);
+        }
+
+        .fa-floppy-disk {
+          display: none;
+        }
       }
     }
   }

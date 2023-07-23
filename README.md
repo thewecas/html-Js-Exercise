@@ -319,8 +319,6 @@ You may assume the following rules:
 [code](/14)
 
 ## 15. Exercise - TO DO List 
-> ***UI Completed, functionality Pending***	
-
 create a small to do list using javascript and higher order functions & most optimized way   
 
 [Preview](https://thewecas.github.io/html-Js-Exercise/15/)  

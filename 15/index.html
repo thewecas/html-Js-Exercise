@@ -1,64 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Notes | Vikas</title>
-    <link rel="stylesheet" href="style.css" />
-    <script
-      src="https://kit.fontawesome.com/e60cf3ce2f.js"
-      crossorigin="anonymous"></script>
-  </head>
-  <body>
-    <header>
-      <h1>todo</h1>
-      <div class="input-container">
-        <form class="input-Form">
-          <input
-            type="text"
-            name="title"
-            id="input-title"
-            placeholder="Title"
-            required />
-          <textarea
-            type="text"
-            name="description"
-            id="input-description"
-            placeholder="Description..."></textarea>
-          <button class="btn" type="submit">
-            <i class="fa-solid fa-circle-plus"></i>
-          </button>
-        </form>
-      </div>
-    </header>
 
-    <div class="main">
-      <div class="pending task-container"></div>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>todo | Vikas</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://kit.fontawesome.com/e60cf3ce2f.js" crossorigin="anonymous"></script>
+</head>
 
-      <div class="completed task-container">
-        <h2>Completed</h2>
-        <div class="task">
-          <input class="check" type="checkbox" id="" />
-          <p class="title" id="t">Lorem, ipsum dolor.</p>
-          <p class="desc" id="d"></p>
-        </div>
-        <div class="task">
-          <input class="check" type="checkbox" id="" />
-          <p class="title" id="t">Lorem, ipsum dolor.</p>
-          <p class="desc" id="d">Lorem ipsum dolor sit amet.</p>
-        </div>
-        <div class="task">
-          <input class="check" type="checkbox" id="" />
-          <p class="title" id="t">Lorem, ipsum dolor.</p>
-          <p class="desc" id="d">
-            Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet consectetur
-            adipisicing elit. Nam quidem maxime officiis quia obcaecati rem
-            aspernatur. Neque eaque cum nostrum?
-          </p>
-        </div>
-      </div>
+<body>
+  <header>
+    <h1>todo</h1>
+    <div class="input-container">
+      <form class="input-Form">
+        <input type="text" name="title" id="input-title" placeholder="Title" required />
+        <textarea type="text" name="description" id="input-description" placeholder="Description..."></textarea>
+        <button class="btn" type="submit">
+          <i class="fa-solid fa-circle-plus"></i>
+        </button>
+      </form>
+    </div>
+  </header>
+
+  <div class="main">
+    <div class="pending task-container">
     </div>
 
-    <script src="./app.js"></script>
-  </body>
+    <div class=" task-container completed-task-container">
+      <h2 onclick="toggleCompletedTask()" class=" heading">Completed <i class="fa-solid fa-angle-right"></i></h2>
+      <div class="completed">
+
+      </div>
+    </div>
+  </div>
+
+  <script src="./app.js"></script>
+</body>
+
 </html>

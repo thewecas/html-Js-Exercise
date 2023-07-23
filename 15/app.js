@@ -83,17 +83,17 @@ const renderAllTask = () => {
     if (task.isCompleted)
       completedTaskContainer.prepend(createTaskElement(task));
     else {
-      pendingTaskCount++;
+      pendingTaskCount += 1;
       pendingTaskContainer.prepend(createTaskElement(task));
     }
-
-    if (pendingTaskCount == 0) {
-      const placeholderEle = document.createElement("div");
-      placeholderEle.classList.add("empty-pending-task");
-      placeholderEle.innerText = "No Pending Task";
-      pendingTaskContainer.appendChild(placeholderEle);
-    }
   });
+
+  if (pendingTaskCount == 0) {
+    const placeholderEle = document.createElement("div");
+    placeholderEle.classList.add("empty-pending-task");
+    placeholderEle.innerText = "No Pending Task";
+    pendingTaskContainer.appendChild(placeholderEle);
+  }
 };
 
 const setTaskCompleted = (id) => {
@@ -168,7 +168,7 @@ form.addEventListener("submit", (e) => {
   storeDataLocally();
 
   //render newTask
-  pendingTaskContainer.prepend(createTaskElement(newTask));
+  renderAllTask();
 });
 
 (function init() {

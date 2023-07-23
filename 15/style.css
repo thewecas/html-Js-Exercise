@@ -129,6 +129,9 @@ header .input-container form:focus-within #input-description {
 .main .task-container .heading .fa-angle-right {
   rotate: 0deg;
 }
+.main .task-container .heading:hover {
+  cursor: pointer;
+}
 .main .task-container .completed {
   display: none;
 }

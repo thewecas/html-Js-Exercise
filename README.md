@@ -287,7 +287,7 @@ console.log(persistence(999)); // Output : 4
 console.log(persistence(4)); // Output : 0
 ```
 ## 13. Exercise - Table View & Filter using ES6 Array Functions
-> ***Ye to start***  
+> ***In Progress***  
 
 Render a table using the below JSON file given.
 Columns:
@@ -306,6 +306,10 @@ Where View will have its Plot.
 - Filtering using IMDB/Tomato/Combined rating
 
 [Movies.JSON](./13/movies.json)
+[Preview](https://thewecas.github.io/html-Js-Exercise/13/)  
+[code](/13)
+
+
 
 ## 14. Exercise - TIC TAC TOE Game
 Design a Tic-tac-toe game that is played between two players on a 3 x 3 grid.  

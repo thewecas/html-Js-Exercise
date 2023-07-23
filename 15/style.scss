@@ -140,6 +140,9 @@ header {
       .fa-angle-right {
         rotate: 0deg;
       }
+      &:hover {
+        cursor: pointer;
+      }
     }
     .completed {
       display: none;

@@ -96,11 +96,11 @@ const renderAllTask = () => {
   }
 };
 
+//set task completed
 const setTaskCompleted = (id) => {
   const index = taskList.indexOf(taskList.filter((ele) => ele.id == id)[0]);
   taskList[index].isCompleted = !taskList[index].isCompleted;
 
-  //render all the task
   renderAllTask();
 };
 
@@ -108,7 +108,7 @@ const setTaskCompleted = (id) => {
 const removeTask = (id) => {
   const index = taskList.indexOf(taskList.filter((ele) => ele.id == id)[0]);
   taskList.splice(index, 1);
-  //render all the task
+
   renderAllTask();
 };
 

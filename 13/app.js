@@ -133,8 +133,6 @@ const getNewMovieRow = (movie) => {
 const modal = document.querySelector(".view-modal");
 const showMovieDetails = (id) => {
   let imgUrl = "./assets/image-placeholder.svg";
-  console.log(id);
-
   const movie = data.filter((movie) => movie._id == id)[0];
 
   $.getJSON(

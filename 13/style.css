@@ -47,22 +47,20 @@
   width: max-content;
   display: flex;
   align-items: center;
-  gap: 0.5rem;
-  margin-left: 2rem;
+  gap: 0.25rem;
+  margin-left: 1rem;
 }
 .main .input-container .sortInput-container select,
 .main .input-container .inputRows-container select {
-  height: 2rem;
   outline: transparent;
   font-size: 1rem;
   border: 1px solid rgba(128, 128, 128, 0.5);
-  padding: 0.25rem 0.5rem;
+  padding: 0.25rem 0rem;
 }
 .main .input-container .sortInput-container .sortOrder,
 .main .input-container .inputRows-container .sortOrder {
-  height: 2rem;
   padding: 0.5rem 0.5rem;
-  border: 1px solid rgba(128, 128, 128, 0.5);
+  border: transparent;
   background-color: transparent;
 }
 .main .input-container .sortInput-container:hover,
@@ -137,6 +135,7 @@
   border: transparent;
   background-color: rgba(128, 128, 128, 0.3);
   border-radius: 0.25rem;
+  font-size: 0.9rem;
 }
 .main table td:nth-child(5) button:hover {
   cursor: pointer;
@@ -179,6 +178,7 @@
 
 .view-modal[open] {
   border-radius: 0.5rem;
+  position: fixed !important;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);

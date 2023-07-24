@@ -3,11 +3,16 @@
   font-size: min(3vw, 16px);
 }
 
+::-webkit-scrollbar {
+  display: none;
+}
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
+  line-height: 1.5;
 }
 
 .main {
@@ -30,9 +35,51 @@
 .main .primary-btn:hover {
   cursor: pointer;
 }
+.main .input-container {
+  display: flex;
+  margin-left: auto;
+  justify-content: flex-end;
+  margin-top: 3rem;
+}
+.main .input-container .sortInput-container,
+.main .input-container .inputRows-container {
+  width: -moz-max-content;
+  width: max-content;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-left: 2rem;
+}
+.main .input-container .sortInput-container select,
+.main .input-container .inputRows-container select {
+  height: 2rem;
+  outline: transparent;
+  font-size: 1rem;
+  border: 1px solid rgba(128, 128, 128, 0.5);
+  padding: 0.25rem 0.5rem;
+}
+.main .input-container .sortInput-container .sortOrder,
+.main .input-container .inputRows-container .sortOrder {
+  height: 2rem;
+  padding: 0.5rem 0.5rem;
+  border: 1px solid rgba(128, 128, 128, 0.5);
+  background-color: transparent;
+}
+.main .input-container .sortInput-container:hover,
+.main .input-container .inputRows-container:hover {
+  cursor: pointer;
+}
+.main .input-container .sortInput-container i,
+.main .input-container .inputRows-container i {
+  font-size: 1.2rem;
+  display: none;
+}
+.main .input-container .sortInput-container i.iconVisible,
+.main .input-container .inputRows-container i.iconVisible {
+  display: inline;
+}
 .main table {
-  margin-block: 2rem;
-  width: min(100%, 850px);
+  margin-top: 2rem;
   margin-inline: auto;
   border-collapse: collapse;
 }
@@ -44,22 +91,25 @@
   padding-block: 0.75rem;
   padding-inline: 0.5rem;
 }
-.main table th:nth-child(1), .main table th:nth-child(2), .main table th:nth-child(3), .main table th:nth-child(4) {
-  width: 11%;
+.main table th:nth-child(1), .main table th:nth-child(2), .main table th:nth-child(3), .main table th:nth-child(4), .main table th:nth-child(5) {
+  width: 12%;
 }
-.main table th:nth-child(1) div, .main table th:nth-child(2) div, .main table th:nth-child(3) div, .main table th:nth-child(4) div {
+.main table th:nth-child(1) div, .main table th:nth-child(2) div, .main table th:nth-child(3) div, .main table th:nth-child(4) div, .main table th:nth-child(5) div {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
 }
-.main table th:nth-child(1) div img, .main table th:nth-child(2) div img, .main table th:nth-child(3) div img, .main table th:nth-child(4) div img {
+.main table th:nth-child(1) div img, .main table th:nth-child(2) div img, .main table th:nth-child(3) div img, .main table th:nth-child(4) div img, .main table th:nth-child(5) div img {
   width: min(5vw, 2rem);
   border: transparent;
   outline: transparent !important;
 }
 .main table th:nth-child(1) {
-  width: auto;
+  width: 30%;
+}
+.main table th:nth-child(5) {
+  width: 5%;
 }
 .main table td {
   font-size: 1rem;
@@ -78,6 +128,19 @@
   font-size: 0.7rem;
   font-weight: 500;
 }
+.main table td:nth-child(5) {
+  width: 100%;
+  display: block;
+}
+.main table td:nth-child(5) button {
+  padding: 0.3rem 0.75rem;
+  border: transparent;
+  background-color: rgba(128, 128, 128, 0.3);
+  border-radius: 0.25rem;
+}
+.main table td:nth-child(5) button:hover {
+  cursor: pointer;
+}
 .main table th,
 .main table td {
   text-align: center;
@@ -86,12 +149,16 @@
 .main table td:nth-child(1) {
   text-align: left;
 }
+.main .pageCounter {
+  margin-block: 1rem;
+  text-align: right;
+}
 .main .pageBtn-container {
-  width: min(100%, 850px);
   margin-inline: auto;
   display: flex;
   flex-wrap: wrap;
   gap: 1rem;
+  justify-content: center;
 }
 .main .pageBtn-container .pageBtn {
   padding: 0.25rem 0.5rem;
@@ -104,4 +171,96 @@
 }
 .main .pageBtn-container .pageBtn:hover {
   cursor: pointer;
+}
+
+.view-modal {
+  display: none;
+}
+
+.view-modal[open] {
+  border-radius: 0.5rem;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 2rem;
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+  position: relative;
+  border: transparent;
+  flex-wrap: wrap;
+  width: -moz-fit-content;
+  width: fit-content;
+  justify-content: center;
+}
+.view-modal[open]::backdrop {
+  background-color: rgba(128, 128, 128, 0.4);
+}
+.view-modal[open] .closeBtn {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-size: 1.2rem;
+  border: transparent;
+  padding: 0;
+  margin: 0;
+  background-color: transparent;
+}
+.view-modal[open] .closeBtn:hover {
+  cursor: pointer;
+}
+.view-modal[open] .poster {
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: min(200px, 100%);
+  height: min(300px, 100%);
+}
+.view-modal[open] .info-container {
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+.view-modal[open] .info-container .rating-container {
+  display: flex;
+  gap: 1rem;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-block: 1rem;
+}
+.view-modal[open] .info-container .rating-container .rating {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+.view-modal[open] .info-container .rating-container .rating .rate {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-left: -1rem;
+}
+.view-modal[open] .info-container .rating-container .rating .rate::before {
+  content: "\f005   ";
+  color: rgb(241, 208, 21);
+  font-family: FontAwesome;
+}
+.view-modal[open] .info-container .rating-container .rating .rate.imdbRating::after, .view-modal[open] .info-container .rating-container .rating .rate.combinedRating::after {
+  content: "/10";
+  font-size: 0.9rem;
+  font-weight: 400;
+}
+.view-modal[open] .info-container .rating-container .rating .rate.tomatoesRating::after {
+  content: "/5";
+  font-size: 0.9rem;
+  font-weight: 400;
+}
+.view-modal[open] .info-container .rating-container .rating div {
+  text-align: center;
+}
+.view-modal[open] .info-container .rating-container .rating div .votes::after {
+  content: " votes";
+  font-size: 0.8rem;
+}
+.view-modal[open] .info-container .rating-container .rating div img {
+  width: 3rem;
 }/*# sourceMappingURL=style.css.map */

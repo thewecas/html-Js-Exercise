@@ -287,7 +287,6 @@ console.log(persistence(999)); // Output : 4
 console.log(persistence(4)); // Output : 0
 ```
 ## 13. Exercise - Table View & Filter using ES6 Array Functions
-> ***In Progress***  
 
 Render a table using the below JSON file given.
 Columns:
@@ -305,7 +304,7 @@ Where View will have its Plot.
 - IMDB/Tomato Combined rating.
 - Filtering using IMDB/Tomato/Combined rating
 
-[Movies.JSON](./13/movies.json)
+[Movies.JSON](./13/movies.json)  
 [Preview](https://thewecas.github.io/html-Js-Exercise/13/)  
 [code](/13)
 

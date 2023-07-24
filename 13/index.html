@@ -14,6 +14,32 @@
 <body>
   <div class="main">
     <h1>Movie Ratings</h1>
+    <div class="input-container">
+      <div class="sortInput-container">
+        <label for="">Sort by</label>
+
+        <select name="" id="sortBy" oninput="sortBy(event.target.value)">
+          <option value="title" selected>Title</option>
+          <option value="imdbRating">IMDB Rating</option>
+          <option value="tomatoesRating">Tomatoes Rating</option>
+          <option value="combinedRating">Combined Rating</option>
+        </select>
+        <button class="sortOrder" onclick="changeSortOrder()"><i
+            class="fa-solid fa-arrow-up-wide-short iconVisible sortIcon"></i><i
+            class="fa-solid fa-arrow-down-wide-short sortIcon"></i></button>
+
+      </div>
+      <div class="inputRows-container">
+        Show
+        <select name="inputRows" id="" oninput="changeNoOfRows(event.target.value)">
+          <option value="5" selected>5</option>
+          <option value="10">10</option>
+          <option value="15">15</option>
+          <option value="20">20</option>
+        </select>
+        Rows
+      </div>
+    </div>
     <!-- <button class="primary-btn">btn</button> -->
 
     <table>
@@ -28,21 +54,25 @@
           <th>
             <div>
               <img src="./assets/imdb.svg" alt="">
-              <p>IMDB Rating</p>
+              <p>IMDB <br> Rating</p>
             </div>
           </th>
           <th>
             <div>
               <img src="./assets/tomatoes.svg" alt="">
-              <p>Tomatoes Rating</p>
+              <p>R Tomatoes Rating</p>
             </div>
           </th>
-
-
           <th>
             <div>
               <img src="./assets/popcorn.svg" alt="">
-              <p>Combined Rating</p>
+              <p>Combined <br> Rating</p>
+            </div>
+          </th>
+          <th>
+            <div>
+              <img src="./assets/info.svg" alt="">
+              <p>View</p>
             </div>
           </th>
           <!-- <th>View</th> -->
@@ -51,12 +81,47 @@
       <tbody class="container">
       </tbody>
     </table>
+    <p class="pageCounter">Page <span class="pageNumber"></span> </p>
     <div class="pageBtn-container">
 
     </div>
   </div>
 
 
+  <dialog class="view-modal">
+    <button class="closeBtn"><i class="fa-solid fa-xmark" onclick="closeModal()"></i></button>
+    <img class="poster" src="./assets/image-placeholder.svg" alt="">
+    <div class="info-container">
+      <div>
+        <h2 class="title"></h2>
+        <p class="plot"></p>
+      </div>
+      <div class="rating-container">
+        <div class="rating">
+          <p class="imdbRating rate">
+          </p>
+          <div>
+            <img src="./assets/imdb.svg" alt="">
+            <p class="imdbRatingCount votes"></p>
+          </div>
+        </div>
+        <div class="rating">
+          <p class="tomatoesRating rate"> </p>
+          <div>
+            <img src="./assets/tomatoes.svg" alt="">
+            <p class="tomatoesRatingCount votes"></p>
+          </div>
+        </div>
+        <div class="rating">
+          <p class="combinedRating rate"></p>
+          <div>
+            <img src="./assets/popcorn.svg" alt="">
+            <p class="combinedRatingCount votes"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </dialog>
 
 
   <script src="./app.js"></script>

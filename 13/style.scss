@@ -3,16 +3,20 @@
 $poppins: "Poppins", sans-serif;
 
 $width: min(100%, 1024px);
-$innerWidth: min(100%, 850px);
+// $innerWidth: min(100%, 992px);
 :root {
   font-size: min(3vw, 16px);
 }
 
+::-webkit-scrollbar {
+  display: none;
+}
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: $poppins;
+  line-height: 1.5;
 }
 
 .main {
@@ -35,9 +39,48 @@ $innerWidth: min(100%, 850px);
     }
   }
 
+  .input-container {
+    display: flex;
+    margin-left: auto;
+    justify-content: flex-end;
+    margin-top: 3rem;
+
+    .sortInput-container,
+    .inputRows-container {
+      width: max-content;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-left: 2rem;
+      select {
+        height: 2rem;
+        outline: transparent;
+        font-size: 1rem;
+        border: 1px solid rgba(gray, 0.5);
+        // background-color: rgba(gray, 0.5);
+        padding: 0.25rem 0.5rem;
+      }
+      .sortOrder {
+        height: 2rem;
+        padding: 0.5rem 0.5rem;
+        border: 1px solid rgba(gray, 0.5);
+        background-color: transparent;
+      }
+      &:hover {
+        cursor: pointer;
+      }
+      i {
+        font-size: 1.2rem;
+        display: none;
+        &.iconVisible {
+          display: inline;
+        }
+      }
+    }
+  }
+
   table {
-    margin-block: 2rem;
-    width: $innerWidth;
+    margin-top: 2rem;
     margin-inline: auto;
     border-collapse: collapse;
     tr {
@@ -51,8 +94,9 @@ $innerWidth: min(100%, 850px);
       &:nth-child(1),
       &:nth-child(2),
       &:nth-child(3),
-      &:nth-child(4) {
-        width: 11%;
+      &:nth-child(4),
+      &:nth-child(5) {
+        width: 12%;
         div {
           display: flex;
           flex-direction: column;
@@ -66,7 +110,10 @@ $innerWidth: min(100%, 850px);
         }
       }
       &:nth-child(1) {
-        width: auto;
+        width: 30%;
+      }
+      &:nth-child(5) {
+        width: 5%;
       }
     }
     td {
@@ -90,6 +137,20 @@ $innerWidth: min(100%, 850px);
           font-weight: 500;
         }
       }
+      &:nth-child(5) {
+        // padding-bottom: 1rem;
+        width: 100%;
+        display: block;
+        button {
+          padding: 0.3rem 0.75rem;
+          border: transparent;
+          background-color: rgba(gray, 0.3);
+          border-radius: 0.25rem;
+          &:hover {
+            cursor: pointer;
+          }
+        }
+      }
     }
     th,
     td {
@@ -99,13 +160,19 @@ $innerWidth: min(100%, 850px);
       }
     }
   }
+
+  .pageCounter {
+    margin-block: 1rem;
+    text-align: right;
+  }
   .pageBtn-container {
-    width: $innerWidth;
+    // width: $innerWidth;
     margin-inline: auto;
 
     display: flex;
     flex-wrap: wrap;
     gap: 1rem;
+    justify-content: center;
     .pageBtn {
       padding: 0.25rem 0.5rem;
       display: inline-block;
@@ -116,6 +183,104 @@ $innerWidth: min(100%, 850px);
       border-radius: 0.25rem;
       &:hover {
         cursor: pointer;
+      }
+    }
+  }
+}
+
+.view-modal {
+  display: none;
+}
+
+.view-modal[open] {
+  border-radius: 0.5rem;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 2rem;
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+  position: relative;
+  border: transparent;
+  flex-wrap: wrap;
+  width: fit-content;
+  justify-content: center;
+  &::backdrop {
+    background-color: rgba(gray, 0.4);
+  }
+  .closeBtn {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    font-size: 1.2rem;
+    border: transparent;
+    padding: 0;
+    margin: 0;
+    background-color: transparent;
+    &:hover {
+      cursor: pointer;
+    }
+  }
+  .poster {
+    object-fit: cover;
+    width: min(200px, 100%);
+    height: min(300px, 100%);
+  }
+  .info-container {
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    .rating-container {
+      display: flex;
+      gap: 1rem;
+      justify-content: space-evenly;
+      align-items: center;
+      margin-block: 1rem;
+      .rating {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5rem;
+        .rate {
+          font-size: 1.2rem;
+          font-weight: 600;
+          margin-left: -1rem;
+          &::before {
+            content: "\f005   ";
+            color: rgb(241, 208, 21);
+            font-family: FontAwesome;
+          }
+          &.imdbRating,
+          &.combinedRating {
+            &::after {
+              content: "/10";
+              font-size: 0.9rem;
+              font-weight: 400;
+            }
+          }
+          &.tomatoesRating {
+            &::after {
+              content: "/5";
+              font-size: 0.9rem;
+              font-weight: 400;
+            }
+          }
+        }
+        div {
+          text-align: center;
+
+          .votes {
+            &::after {
+              content: " votes";
+              font-size: 0.8rem;
+            }
+          }
+          img {
+            width: 3rem;
+          }
+        }
       }
     }
   }

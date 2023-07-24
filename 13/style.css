@@ -48,7 +48,7 @@
   display: flex;
   align-items: center;
   gap: 0.25rem;
-  margin-left: 1rem;
+  margin-left: 0.5rem;
 }
 .main .input-container .sortInput-container select,
 .main .input-container .inputRows-container select {

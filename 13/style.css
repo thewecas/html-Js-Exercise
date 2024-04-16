@@ -189,8 +189,7 @@
   position: relative;
   border: transparent;
   flex-wrap: wrap;
-  width: -moz-fit-content;
-  width: fit-content;
+  width:  min(90%, 700px);;
   justify-content: center;
 }
 .view-modal[open]::backdrop {
